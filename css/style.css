@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", serif;
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: auto; /* 스크롤 가능하도록 설정 */
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+#container {
+  position: relative;
+  text-align: center;
+}
+#header {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.menuWrapper {
+  right: 2rem;
+  position: fixed;
+  top: 2rem;
+  z-index: 99;
+}
+.menuWrapper .menuIcon {
+  cursor: pointer;
+  height: 2rem;
+  position: relative;
+  right: 30px;
+  width: 2rem;
+  z-index: 31;
+  transition: 0.5s;
+  transition: transform 0.3s ease;
+}
+/* menuIcon 클릭시 움직임 색깔 변경 */
+.menuWrapper .menuIcon.active::before {
+  transform: rotate(45deg) translate(0.2rem, 0.2rem);
+  background-color: #2c2929;
+}
+/* menuIcon 클릭시 움직임 색깔 변경 */
+.menuWrapper .menuIcon.active::after {
+  transform: rotate(-45deg) translate(0.2rem, -0.2rem);
+  background-color: #2c2929;
+}
+
+.menuWrapper .menuIcon.active {
+  background: transparent;
+}
+
+.menuWrapper .menu.open {
+  transform: translateX(0); /* 메뉴가 나타나도록 설정 */
+}
+.menuWrapper .menuIcon::after,
+.menuWrapper .menuIcon::before {
+  background-color: #d9d9d9;
+  content: "";
+  height: 0.2rem;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+  transition: 0.5s;
+}
+.menuWrapper .menuIcon::before {
+  top: 50%;
+}
+.menuWrapper .menuIcon .close::before {
+  transform: rotate(45deg);
+}
+
+.menuWrapper .menuIcon::after {
+  top: calc(50% + 0.5rem);
+}
+.menuWrapper .menuIcon .close::after {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+
+.menuWrapper .menu {
+  background-color: #d9d9d9;
+  height: 100vh;
+  right: 0px;
+  position: fixed;
+  top: 0px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  width: 25rem;
+  z-index: 30;
+}
+.menuWrapper .menu ul {
+  bottom: 0px;
+  font-size: 2.5rem;
+  height: 50%;
+  padding-left: 0px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  margin: auto;
+}
+.menuWrapper .menu ul li a {
+  color: #706d6d;
+  transition: color 0.3s ease;
+}
+.menu ul li:hover a {
+  color: #2c2929;
+}
+.menuWrapper .menu ul li.active a {
+  color: #2c2929;
+}
+.menuWrapper .menu .open {
+  transform: translateX(0px);
+}
+.section {
+  position: relative;
+  min-height: 100vh; /* 각 섹션의 높이를 뷰포트 크기로 설정 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  text-align: left;
+}
+
+#home {
+  background-color: #000c24;
+}
+
+#aboutMe {
+  background-color: #1a1a1a;
+  z-index: 21;
+}
+
+#skill {
+  background-color: #333;
+}
+
+#project {
+  background-color: #444;
+}
+
+#contact {
+  background-color: #000c24;
+}
+
+#titlePosition {
+  position: absolute;
+  left: 0;
+  top: 8rem;
+  width: 500px;
+}
+.frontTitle {
+  position: absolute;
+  left: 3rem;
+  z-index: 20;
+  color: #fff;
+  text-shadow: -1px 0px #000, 0px 1px #000, 1px 0px #000, 0px -1px #000;
+  font-family: "League Spartan", serif;
+  font-size: 5rem;
+}
+.backTitle {
+  position: absolute;
+  left: 3.5rem;
+  top: -1px;
+  z-index: 19;
+  color: #f29006;
+  text-shadow: -1px 0px #000, 0px 1px #000, 1px 0px #000, 0px -1px #000;
+  font-family: "League Spartan", serif;
+  font-size: 5rem;
+}
+#titlePosition2 {
+  position: absolute;
+  left: 5rem;
+  top: 13rem;
+}
+#titlePosition3 {
+  position: absolute; /* z-index가 작동하려면 position 설정 필요 */
+  left: 3.7%;
+  top: 60%;
+  z-index: 20;
+  font-size: 2rem;
+  color: #fff;
+}
+#titlePosition4 {
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  height: 100vh; /* 화면 높이 전체를 차지하도록 설정 */
+  position: absolute;
+  left: 3.8%;
+  bottom: -40%;
+  z-index: 19;
+}
+#titlePosition4 h1 {
+  font-size: 40rem;
+  color: #000c24;
+  text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3),
+    /* 좌측 하단 */ -1px -1px 2px rgba(185, 184, 184, 0.3),
+    /* 우측 상단 */ 1px -1px 2px rgba(185, 184, 184, 0.3),
+    /* 우측 하단 */ -1px 1px 2px rgba(185, 184, 184, 0.3); /* 좌측 상단 */
+}
+#titlePosition4 img {
+  width: 1150px;
+  position: absolute;
+  bottom: -10rem;
+  left: 2.5rem;
+  overflow: hidden;
+}
+.chaperTitle {
+  padding-left: 3rem;
+  padding-top: 3rem;
+}
+.chaperTitle h3 {
+  color: #fff;
+  font-weight: 200;
+}
+#skillWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+#skillWrap div {
+  width: 250px;
+  flex: 1; /* 동일한 비율로 너비를 차지 */
+  margin: 0 10px; /* 간격을 조금 추가 */
+  height: 500px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+#projectWrap {
+  width: 60%;
+  height: 400px;
+  display: flex;
+  margin: auto;
+}
+#projectWrap #left {
+  width: 40%;
+  background-color: #706d6d;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#projectWrap #right {
+  width: 60%;
+  background-color: #fdfdfd;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#contactWrap {
+  width: 250px;
+  background-color: #f29006;
+  border-radius: 5%;
+  display: block;
+  margin: auto;
+  height: 250px;
+}
+#contactWrap h3 {
+  font-weight: normal;
+  color: #fff;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+#contactWrap p {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+#contactWrap span {
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+/* main section end */
+.circle {
+  width: 250px;
+  height: 250px;
+  background-color: #ab6e1a;
+  border-radius: 50%;
+  position: absolute;
+  right: -50px;
+  top: 10%;
+  transform: translateY(-10%);
+}
+
+#footer {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translatex(-50%);
+  font-size: 1.4rem;
+  color: #d9d9d9;
+  z-index: 201;
+  text-align: center;
+}
+#modal .background {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 29;
+}
+#modal .background.show {
+  display: block;
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #444;
+}
+body::-webkit-scrollbar-track {
+  background-color: #ededed;
+}
