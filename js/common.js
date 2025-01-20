@@ -5,7 +5,7 @@ let posX = 0;
 let posY = 0;
 let velocityX = 3; // Horizontal speed
 let velocityY = 3; // Vertical speed
-const circleSize = 250;
+const circleSize = 300;
 
 function animateCircle() {
   const windowWidth = window.innerWidth;

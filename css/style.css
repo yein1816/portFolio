@@ -134,12 +134,11 @@ a {
 
 #home {
   background-color: #000c24;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
-#aboutMe {
-  background-color: #1a1a1a;
-  z-index: 21;
-}
 
 #skill {
   background-color: #333;
@@ -153,42 +152,43 @@ a {
   background-color: #000c24;
 }
 
+
 #titlePosition {
   position: absolute;
   left: 0;
-  top: 8rem;
-  width: 500px;
+  top: 10rem;
+  width: calc(100% - 6rem); /* 부모 크기에서 여백을 빼는 방식 */
 }
 .frontTitle {
   position: absolute;
-  left: 3rem;
+  left: 8rem;
   z-index: 20;
   color: #fff;
   text-shadow: -1px 0px #000, 0px 1px #000, 1px 0px #000, 0px -1px #000;
   font-family: "League Spartan", serif;
-  font-size: 5rem;
+  font-size: 9rem;
 }
 .backTitle {
   position: absolute;
-  left: 3.5rem;
+  left: 8.8rem;
   top: -1px;
   z-index: 19;
   color: #f29006;
   text-shadow: -1px 0px #000, 0px 1px #000, 1px 0px #000, 0px -1px #000;
   font-family: "League Spartan", serif;
-  font-size: 5rem;
+  font-size: 9rem;
 }
 #titlePosition2 {
   position: absolute;
-  left: 5rem;
-  top: 13rem;
+  left: 9rem;
+  top: 20rem;
 }
 #titlePosition3 {
   position: absolute; /* z-index가 작동하려면 position 설정 필요 */
-  left: 3.7%;
-  top: 60%;
+  left: 6.7%;
+  top: 54%;
   z-index: 20;
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: #fff;
 }
 #titlePosition4 {
@@ -197,17 +197,17 @@ a {
   align-items: center; /* 수직 가운데 정렬 */
   height: 100vh; /* 화면 높이 전체를 차지하도록 설정 */
   position: absolute;
-  left: 3.8%;
+  left: 8.8%;
   bottom: -40%;
   z-index: 19;
 }
 #titlePosition4 h1 {
   font-size: 40rem;
   color: #000c24;
-  text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3),
-    /* 좌측 하단 */ -1px -1px 2px rgba(185, 184, 184, 0.3),
-    /* 우측 상단 */ 1px -1px 2px rgba(185, 184, 184, 0.3),
-    /* 우측 하단 */ -1px 1px 2px rgba(185, 184, 184, 0.3); /* 좌측 상단 */
+  text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3), /* 좌측 하단 */
+    -1px -1px 2px rgba(185, 184, 184, 0.3), /* 우측 상단 */
+     1px -1px 2px rgba(185, 184, 184, 0.3),/* 우측 하단 */
+    -1px 1px 2px rgba(185, 184, 184, 0.3); /* 좌측 상단 */
 }
 #titlePosition4 img {
   width: 1150px;
@@ -221,6 +221,51 @@ a {
   padding-top: 3rem;
 }
 .chaperTitle h3 {
+  color: #000c24;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+#aboutMe {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  z-index: 21;
+}
+
+#aboutWrap {
+
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  margin: auto;
+}
+
+#aboutMe h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#aboutMe p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #0078ff;
+  font-weight: bold;
+}
+
+#aboutMe p:last-child {
+  margin-top: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.contactBtn {
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #000c24;
   color: #fff;
   font-weight: 200;
 }
@@ -259,12 +304,12 @@ a {
   border-bottom-right-radius: 8px;
 }
 #contactWrap {
-  width: 250px;
+  width: 400px;
   background-color: #f29006;
   border-radius: 5%;
   display: block;
   margin: auto;
-  height: 250px;
+  height: 400px;
 }
 #contactWrap h3 {
   font-weight: normal;
@@ -283,8 +328,8 @@ a {
 }
 /* main section end */
 .circle {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   background-color: #ab6e1a;
   border-radius: 50%;
   position: absolute;
