@@ -1,4 +1,4 @@
-// 공 애니메이션션
+// 공 애니메이션
 const circle = document.querySelector(".circle");
 
 let posX = 0;
@@ -33,9 +33,10 @@ function animateCircle() {
 circle.style.position = "absolute";
 animateCircle();
 
-const menuIcon = document.querySelector(".menuIcon");
+const menuIcon = document.querySelector(".menuWrapper .menuIcon");
 const menu = document.querySelector(".menu");
 const modalBackground = document.querySelector("#modal .background");
+const menuItems = document.querySelectorAll(".menu ul li");
 
 function toggleMenu() {
   // 메뉴와 아이콘 상태 토글
@@ -58,7 +59,6 @@ modalBackground.addEventListener("click", () => {
 });
 
 // 메뉴 li 클릭시 글자색 변경
-// const menuItems = document.querySelectorAll(".menu ul li");
 
 // menuItems.forEach((item) => {
 //   item.addEventListener("click", () => {
@@ -83,6 +83,7 @@ menuItems.forEach((item) => {
   });
 });
 
+//a링크 클릭시 해당 section으로 이동
 const links = document.querySelectorAll(".menu ul li a");
 
 links.forEach((link) => {
@@ -92,10 +93,30 @@ links.forEach((link) => {
     const targetSection = document.querySelector(targetId);
 
     if (targetSection) {
-      this.scrollIntoView({
-        behavior: "smoth",
+      targetSection.scrollIntoView({
+        behavior: "smooth",
         block: "start",
       });
     }
   });
+});
+
+// 해당 section 이동 시 menuIcon 색 변경
+// 스크롤 이벤트 핸들러
+window.addEventListener("scroll", function () {
+  // const menuIcon = document.querySelector(".menuWrapper .menuIcon");
+  const aboutMeSection = document.getElementById("aboutMe");
+  const projectSection = document.getElementById("project");
+
+  const scrollPosition = window.scrollY; // 현재 스크롤 위치
+  const aboutMeOffset = aboutMeSection.offsetTop; // About Me 섹션의 위치
+  const projectOffset = projectSection.offsetTop; // Project 섹션의 위치
+
+  if (scrollPosition >= aboutMeOffset && scrollPosition < projectOffset) {
+    menuIcon.style.backgroundColor = "#000c24"; // About Me 섹션에 있을 때 색상 변경
+  } else if (scrollPosition >= projectOffset) {
+    menuIcon.style.backgroundColor = "#000c24"; // Project 섹션에 있을 때 색상 변경
+  } else {
+    menuIcon.style.backgroundColor = "#d9d9d9"; // 기본 색상으로 돌아가기
+  }
 });

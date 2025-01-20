@@ -16,9 +16,15 @@
           <div class="menu">
             <ul>
               <li><a href="#home">HOME</a></li>
-              <li><a href="#aboutMe">ABOUT ME</a></li>
+              <li>
+                <a href="#aboutMe" class="menuLink" id="aboutMeLink"
+                  >ABOUT ME</a
+                >
+              </li>
               <li><a href="#skill">SKILLS</a></li>
-              <li><a href="#project">PROJECT</a></li>
+              <li>
+                <a href="#project" class="menuLink" id="projectLink">PROJECT</a>
+              </li>
               <li><a href="#contact">CONTACT</a></li>
             </ul>
           </div>
@@ -60,17 +66,19 @@
             <P>최신 트렌드를 따라가며 이를 프로젝트에 접목할 수 있도록 하며, 매 순간 성장하는 개발자가 되기 위해 끊임없이 노력하고 있습니다. </P> -->
             <h1>👋 Hello, I'm Jung ye in!</h1>
             <p>
-              A passionate <strong>Full-Stack Developer</strong> dedicated to creating 
-              seamless user experiences and robust backend systems.  
-              <br/>🚀 I thrive on solving complex problems and turning ideas into reality.
+              A passionate <strong>Full-Stack Developer</strong> dedicated to
+              creating seamless user experiences and robust backend systems.
+              <br />🚀 I thrive on solving complex problems and turning ideas
+              into reality.
             </p>
             <p>
-              With a love for <span class="highlight">clean code</span> and a focus on <span class="highlight">collaboration</span>, 
-              I aim to build solutions that not only work but inspire.
+              With a love for <span class="highlight">clean code</span> and a
+              focus on <span class="highlight">collaboration</span>, I aim to
+              build solutions that not only work but inspire.
             </p>
             <p>
               Let's create something amazing together. 🌟
-              <a href="#contact" class="contactBtn">Contact Me!!</a>
+              <a href="#contact" id="contactBtn">Contact Me!!</a>
             </p>
           </div>
         </section>
@@ -81,9 +89,79 @@
             <h3>SKILLS</h3>
           </div>
           <div id="skillWrap">
-            <div>Frontend</div>
-            <div>Backend</div>
-            <div>Community</div>
+            <!-- Frontend Section -->
+            <div class="frontend">
+              <h3>Frontend</h3>
+              <div class="logo-grid">
+                <div class="logo-item">
+                  <img src="./images/logos/frontend/html5.png" alt="html5" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/frontend/css3.png" alt="css3" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/frontend/sass.png" alt="sass" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/frontend/jquery.png" alt="jquery" />
+                </div>
+                <div class="logo-item">
+                  <img
+                    src="./images/logos/frontend/javascript.png"
+                    alt="javascript"
+                  />
+                </div>
+                <div class="logo-item">
+                  <img
+                    src="./images/logos/frontend/typescript.png"
+                    alt="typescript"
+                  />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/frontend/react.png" alt="react" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend Section -->
+            <div class="backend">
+              <h3>Backend</h3>
+              <div class="logo-grid">
+                <div class="logo-item">
+                  <img src="./images/logos/backend/nodejs.png" alt="nodejs" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/backend/python.png" alt="python" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/backend/mysql.png" alt="mysql" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/backend/php.png" alt="php" />
+                </div>
+                <!-- 추가적인 Backend 기술들 -->
+              </div>
+            </div>
+
+            <!-- Community Section -->
+            <div class="community">
+              <h3>Community</h3>
+              <div class="logo-grid">
+                <div class="logo-item">
+                  <img src="./images/logos/community/github.png" alt="github" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/community/git.png" alt="git" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/community/figma.png" alt="figma" />
+                </div>
+                <div class="logo-item">
+                  <img src="./images/logos/community/slack.png" alt="slack" />
+                </div>
+                <!-- 추가적인 Community 기술들 -->
+              </div>
+            </div>
           </div>
         </section>
         <!-- skills end -->
@@ -93,15 +171,25 @@
             <h3>PROJECT</h3>
           </div>
           <div id="projectWrap">
-            <div id="left">project img</div>
-            <div id="right">project description</div>
+            <div id="left">
+              <img src="./images/collabo1.png" alt="project image" />
+            </div>
+            <div id="right">
+              <h4>Project Title</h4>
+              <p>
+                This is a description of the project. You can explain the
+                functionality, technologies used, and any other details about
+                the project.
+              </p>
+              <button class="btn">View Details</button>
+            </div>
           </div>
         </section>
         <!-- project end -->
         <!-- contact start -->
         <section id="contact" class="section">
           <div class="chaperTitle">
-            <h3>CONTACT</h3>
+            <h3 id="contactTitle">CONTACT</h3>
           </div>
           <div id="contactWrap">
             <h3>JUNG YE IN</h3>

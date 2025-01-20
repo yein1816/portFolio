@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=League+Spartan:wght@100..900&display=swap");
 
+/* 기본 스타일 */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@
   font-family: "Fira Code", serif;
   list-style: none;
 }
+
 html,
 body {
   height: 100%;
@@ -24,14 +26,17 @@ a {
   position: relative;
   text-align: center;
 }
+/* 헤더 */
 #header {
+  position: relative;
   align-items: center;
   justify-content: center;
-  position: relative;
+  display: flex;
 }
+/* 메뉴 */
 .menuWrapper {
-  right: 2rem;
   position: fixed;
+  right: 2rem;
   top: 2rem;
   z-index: 99;
 }
@@ -73,6 +78,7 @@ a {
   width: 100%;
   transition: 0.5s;
 }
+
 .menuWrapper .menuIcon::before {
   top: 50%;
 }
@@ -88,14 +94,14 @@ a {
 }
 
 .menuWrapper .menu {
-  background-color: #d9d9d9;
-  height: 100vh;
-  right: 0px;
   position: fixed;
   top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 25rem;
+  background-color: #d9d9d9;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  width: 25rem;
   z-index: 30;
 }
 .menuWrapper .menu ul {
@@ -122,16 +128,17 @@ a {
 .menuWrapper .menu .open {
   transform: translateX(0px);
 }
+/* 섹션 기본 스타일 */
 .section {
   position: relative;
   min-height: 100vh; /* 각 섹션의 높이를 뷰포트 크기로 설정 */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: center;
   text-align: left;
 }
-
+/* home 섹션 */
 #home {
   background-color: #000c24;
   position: relative;
@@ -139,20 +146,7 @@ a {
   height: auto;
 }
 
-
-#skill {
-  background-color: #333;
-}
-
-#project {
-  background-color: #444;
-}
-
-#contact {
-  background-color: #000c24;
-}
-
-
+/* 타이틀 위치 및 스타일 */
 #titlePosition {
   position: absolute;
   left: 0;
@@ -199,15 +193,15 @@ a {
   position: absolute;
   left: 8.8%;
   bottom: -40%;
-  z-index: 19;
+  z-index: 18;
 }
 #titlePosition4 h1 {
   font-size: 40rem;
   color: #000c24;
-  text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3), /* 좌측 하단 */
-    -1px -1px 2px rgba(185, 184, 184, 0.3), /* 우측 상단 */
-     1px -1px 2px rgba(185, 184, 184, 0.3),/* 우측 하단 */
-    -1px 1px 2px rgba(185, 184, 184, 0.3); /* 좌측 상단 */
+  text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3),
+    /* 좌측 하단 */ -1px -1px 2px rgba(185, 184, 184, 0.3),
+    /* 우측 상단 */ 1px -1px 2px rgba(185, 184, 184, 0.3),
+    /* 우측 하단 */ -1px 1px 2px rgba(185, 184, 184, 0.3); /* 좌측 상단 */
 }
 #titlePosition4 img {
   width: 1150px;
@@ -216,16 +210,13 @@ a {
   left: 2.5rem;
   overflow: hidden;
 }
-.chaperTitle {
-  padding-left: 3rem;
-  padding-top: 3rem;
-}
+
 .chaperTitle h3 {
   color: #000c24;
   font-weight: 400;
   font-size: 2rem;
 }
-
+/* About me 섹션 */
 #aboutMe {
   text-align: center;
   padding: 50px 20px;
@@ -235,9 +226,7 @@ a {
 }
 
 #aboutWrap {
-
   margin: 0 auto;
-  font-family: 'Arial', sans-serif;
   margin: auto;
 }
 
@@ -250,6 +239,10 @@ a {
   font-size: 1.2em;
   line-height: 1.6;
 }
+#aboutMe,
+#project {
+  position: relative; /* 스크롤 이벤트가 올바르게 작동하도록 설정 */
+}
 
 .highlight {
   color: #0078ff;
@@ -261,72 +254,205 @@ a {
   font-size: 1.5em;
   font-weight: bold;
 }
-.contactBtn {
-  border: 1px solid #000;
+/* contact me button 속성 */
+#contactBtn {
+  /* border: 1px solid #000;
   border-radius: 30px;
   padding: 10px;
   background-color: #000c24;
   color: #fff;
+  font-weight: 200; */
+  border: 2px solid #000c24;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #000c24;
+  color: #fff;
   font-weight: 200;
+  font-size: 1.2rem;
+  transition: all 0.3s ease; /* 부드러운 전환 효과 */
+  cursor: pointer;
+  text-align: center;
+}
+#contactBtn:hover {
+  background-color: #f29006; /* 배경 색상 변화 */
+  color: #000c24; /* 텍스트 색상 변화 */
+  font-weight: 400;
+  transform: scale(1.1); /* 크기 확대 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+#contactBtn:active {
+  transform: scale(1.05); /* 클릭 시 살짝 크기 축소 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 효과 감소 */
+}
+/* Skills 섹션*/
+#skill {
+  padding: 60px 20px;
+  background-color: #f29006;
 }
 #skillWrap {
   display: flex;
+  justify-content: space-between; /* 항목들을 수평으로 분배 */
+  gap: 20px; /* 각 섹션 간 간격 */
+  margin: 50px 0;
+  flex-wrap: wrap; /* 화면 크기에 따라 랩핑되도록 설정 */
+}
+
+.frontend,
+.backend,
+.community {
+  text-align: center;
+  flex: 1; /* 각 항목이 동일한 비율로 차지하도록 설정 */
+  min-width: 250px; /* 최소 너비 설정 */
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff; /* 제목 색상 설정 */
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(80px, 1fr)
+  ); /* 최소 80px, 자동 열 생성 */
+  gap: 20px;
+  justify-items: center;
+}
+
+.logo-item img {
+  width: 100%;
+  max-width: 80px; /* 이미지 최대 크기 */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-item img:hover {
+  transform: scale(1.1); /* 마우스 오버 시 이미지 커짐 */
+}
+
+/* 각 항목별 스타일 (Frontend, Backend, Community) */
+.frontend .logo-grid {
+  background-color: #f0f0f0; /* 배경색 */
+  padding: 20px;
+  border-radius: 10px;
+}
+.backend .logo-grid {
+  background-color: #f0f0f0; /* 배경색 */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.community .logo-grid {
+  background-color: #f0f0f0; /* Community 배경색 */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Project 섹션 */
+#project {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+/* projectWrap */
+#projectWrap {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  gap: 20px;
 }
-#skillWrap div {
-  width: 250px;
-  flex: 1; /* 동일한 비율로 너비를 차지 */
-  margin: 0 10px; /* 간격을 조금 추가 */
-  height: 500px;
-  background-color: #d9d9d9;
+
+/* project img */
+#left {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+#left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* project description */
+#right {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#right h4 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#right p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#right .btn {
+  padding: 10px 20px;
+  background-color: #f29006;
+  color: white;
+  border: none;
   border-radius: 5px;
-  padding-top: 10px;
-  padding-left: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
-#projectWrap {
-  width: 60%;
-  height: 400px;
-  display: flex;
-  margin: auto;
+
+#right .btn:hover {
+  background-color: #e28005;
 }
-#projectWrap #left {
-  width: 40%;
-  background-color: #706d6d;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-#projectWrap #right {
-  width: 60%;
-  background-color: #fdfdfd;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+/* Contact 섹션 */
+#contact {
+  background-color: #000c24;
+  padding: 50px 20px;
 }
 #contactWrap {
-  width: 400px;
+  width: 300px;
   background-color: #f29006;
   border-radius: 5%;
   display: block;
   margin: auto;
-  height: 400px;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+#contactTitle {
+  color: #fff;
 }
 #contactWrap h3 {
   font-weight: normal;
   color: #fff;
-  margin-top: 30px;
-  margin-left: 30px;
+  text-align: center;
 }
 #contactWrap p {
   margin-left: 30px;
   margin-top: 15px;
+  font-size: 1.2rem;
+  color: #000;
 }
 #contactWrap span {
   color: #fff;
   margin-left: 30px;
   margin-top: 5px;
+  font-size: 1.1rem;
 }
 /* main section end */
+
+/* Circle 요소 */
 .circle {
   width: 300px;
   height: 300px;
@@ -337,7 +463,7 @@ a {
   top: 10%;
   transform: translateY(-10%);
 }
-
+/* Footer */
 #footer {
   position: absolute;
   left: 50%;
@@ -348,6 +474,7 @@ a {
   z-index: 201;
   text-align: center;
 }
+/* menu click시 나오는 bg */
 #modal .background {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
@@ -361,6 +488,7 @@ a {
 #modal .background.show {
   display: block;
 }
+/* 스크롤 바 설정 */
 body::-webkit-scrollbar {
   width: 15px;
 }
@@ -369,4 +497,181 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-track {
   background-color: #ededed;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .menuWrapper {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .menuWrapper .menu {
+    width: 20rem;
+  }
+
+  .frontTitle,
+  .backTitle {
+    font-size: 6rem;
+  }
+
+  #aboutMe h1 {
+    font-size: 2rem;
+  }
+
+  #aboutMe p {
+    font-size: 1rem;
+  }
+
+  #skillWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #skillWrap div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #projectWrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #contactWrap {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuWrapper .menu {
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  .menuWrapper .menu ul {
+    font-size: 1.5rem;
+  }
+
+  .frontTitle,
+  .backTitle {
+    font-size: 4rem;
+  }
+
+  #titlePosition {
+    top: 5rem;
+  }
+
+  #titlePosition3 {
+    font-size: 2rem;
+  }
+
+  #aboutMe {
+    padding: 30px 15px;
+  }
+
+  #aboutMe h1 {
+    font-size: 1.8rem;
+  }
+
+  #aboutMe p {
+    font-size: 1rem;
+  }
+
+  #projectWrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #projectWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #left,
+  #right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #right h4 {
+    font-size: 1.8rem;
+  }
+
+  #right p {
+    font-size: 1rem;
+  }
+  #contactWrap {
+    width: 80%; /* 모바일 화면에서 더 넓게 조정 */
+    height: auto;
+    padding: 20px;
+  }
+
+  #contactWrap h3 {
+    margin-left: 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  #contactWrap p,
+  #contactWrap span {
+    margin-left: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuWrapper .menu {
+    width: 100%;
+  }
+
+  #home {
+    padding-top: 5rem;
+  }
+
+  .frontTitle,
+  .backTitle {
+    font-size: 3rem;
+  }
+
+  #aboutMe {
+    padding: 20px;
+  }
+
+  #aboutMe h1 {
+    font-size: 1.5rem;
+  }
+
+  #aboutMe p {
+    font-size: 0.9rem;
+  }
+
+  #skillWrap {
+    flex-direction: column;
+  }
+
+  #skillWrap div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #contactWrap {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  #contactWrap h3 {
+    font-size: 1.2rem;
+  }
+
+  #contactWrap p {
+    font-size: 1rem;
+  }
+
+  #contactWrap span {
+    font-size: 0.9rem;
+  }
 }
