@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=League+Spartan:wght@100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=League+Spartan&family=Noto+Sans+KR:wght@100..900&display=swap');
 /* 기본 스타일 */
 * {
   margin: 0;
@@ -115,6 +115,9 @@ a {
   width: 100%;
   margin: auto;
 }
+.menuWrapper .menu ul li {
+  padding: 10px;
+}
 .menuWrapper .menu ul li a {
   color: #706d6d;
   transition: color 0.3s ease;
@@ -143,7 +146,8 @@ a {
   background-color: #000c24;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+  overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 /* 타이틀 위치 및 스타일 */
@@ -151,11 +155,14 @@ a {
   position: absolute;
   left: 0;
   top: 10rem;
-  width: calc(100% - 6rem); /* 부모 크기에서 여백을 빼는 방식 */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* width: calc(100% - 6rem);  */
 }
 .frontTitle {
   position: absolute;
-  left: 8rem;
+  left: 6rem;
   z-index: 20;
   color: #fff;
   text-shadow: -1px 0px #000, 0px 1px #000, 1px 0px #000, 0px -1px #000;
@@ -164,7 +171,7 @@ a {
 }
 .backTitle {
   position: absolute;
-  left: 8.8rem;
+  left: 6.8rem;
   top: -1px;
   z-index: 19;
   color: #f29006;
@@ -176,6 +183,9 @@ a {
   position: absolute;
   left: 9rem;
   top: 20rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 #titlePosition3 {
   position: absolute; /* z-index가 작동하려면 position 설정 필요 */
@@ -186,17 +196,17 @@ a {
   color: #fff;
 }
 #titlePosition4 {
+  position: absolute;
   display: flex;
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
   height: 100vh; /* 화면 높이 전체를 차지하도록 설정 */
-  position: absolute;
   left: 8.8%;
   bottom: -40%;
   z-index: 18;
 }
 #titlePosition4 h1 {
-  font-size: 40rem;
+  font-size: 25rem;
   color: #000c24;
   text-shadow: 1px 1px 2px rgba(185, 184, 184, 0.3),
     /* 좌측 하단 */ -1px -1px 2px rgba(185, 184, 184, 0.3),
@@ -256,12 +266,6 @@ a {
 }
 /* contact me button 속성 */
 #contactBtn {
-  /* border: 1px solid #000;
-  border-radius: 30px;
-  padding: 10px;
-  background-color: #000c24;
-  color: #fff;
-  font-weight: 200; */
   border: 2px solid #000c24;
   border-radius: 30px;
   padding: 10px 20px;
@@ -421,35 +425,125 @@ h3 {
   padding: 50px 20px;
 }
 #contactWrap {
+  /* 3D 효과를 위한 원근감 */
+  perspective: 1000px;
   width: 300px;
-  background-color: #f29006;
-  border-radius: 5%;
-  display: block;
-  margin: auto;
-  height: auto;
-  padding: 20px;
-  box-sizing: border-box;
+  height: 300px;
+  margin: 0 auto;
+  position: relative; /* 부모 요소가 절대 위치의 기준이 되도록 설정 */
 }
 #contactTitle {
   color: #fff;
 }
+
 #contactWrap h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
   font-weight: normal;
   color: #fff;
   text-align: center;
+  font-family: "Noto Sans KR", serif;
 }
 #contactWrap p {
-  margin-left: 30px;
-  margin-top: 15px;
   font-size: 1.2rem;
   color: #000;
 }
+#email {
+  position: absolute;
+  left: 30px;
+  top: 80px;
+}
+#emailTxt {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+}
+#github {
+  position: absolute;
+  left: 30px;
+  top: 150px;
+}
+#githubTxt {
+  position: absolute;
+  left: 30px;
+  top: 170px;
+}
+#call {
+  position: absolute;
+  left: 30px;
+  top: 220px;
+}
+
+#callTxt {
+  position: absolute;
+  left: 30px;
+  top: 240px;
+}
 #contactWrap span {
   color: #fff;
-  margin-left: 30px;
-  margin-top: 5px;
   font-size: 1.1rem;
 }
+
+.flip-container {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.8s; /* 클릭 시 회전 애니메이션 */
+}
+/* 클릭 시 회전 */
+.flip-container:active .flipper,
+.flip-container.clicked .flipper {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  position: absolute; /* 부모 요소를 기준으로 위치 */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* 3D 효과 활성화 */
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* 뒷면 숨기기 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.front {
+  background: #555;
+  color: white;
+  font-size: 2rem;
+}
+
+.back {
+  background: #e28005;
+  color: white;
+  font-size: 1.5rem;
+  transform: rotateY(180deg); /* 뒤집어진 상태로 초기화 */
+}
+
+/* 각 정보의 스타일 */
+#contactWrap .back p {
+  font-weight: bold;
+}
+
+#contactWrap .back span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
 /* main section end */
 
 /* Circle 요소 */
@@ -604,8 +698,8 @@ body::-webkit-scrollbar-track {
     font-size: 1rem;
   }
   #contactWrap {
-    width: 80%; /* 모바일 화면에서 더 넓게 조정 */
-    height: auto;
+    width: 70%; /* 모바일 화면에서 더 넓게 조정 */
+    height: 300px;
     padding: 20px;
   }
 
@@ -619,7 +713,38 @@ body::-webkit-scrollbar-track {
   #contactWrap span {
     margin-left: 0;
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
+  }
+  #email {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+  }
+  #emailTxt {
+    position: absolute;
+    left: 30px;
+    top: 90px;
+  }
+  #github {
+    position: absolute;
+    left: 30px;
+    top: 130px;
+  }
+  #githubTxt {
+    position: absolute;
+    left: 30px;
+    top: 150px;
+  }
+  #call {
+    position: absolute;
+    left: 30px;
+    top: 190px;
+  }
+  
+  #callTxt {
+    position: absolute;
+    left: 30px;
+    top: 210px;
   }
 }
 
@@ -658,20 +783,50 @@ body::-webkit-scrollbar-track {
     margin-bottom: 10px;
   }
   #contactWrap {
-    width: 90%;
-    height: auto;
+    width: 70%;
+    height: 200px;
     padding: 15px;
   }
 
   #contactWrap h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   #contactWrap p {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
-  #contactWrap span {
-    font-size: 0.9rem;
+  #contactWrap .back span {
+    font-size: 0.8rem;
+  }
+  #email {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+  }
+  #emailTxt {
+    position: absolute;
+    left: 20px;
+    top: 75px;
+  }
+  #github {
+    position: absolute;
+    left: 20px;
+    top: 105px;
+  }
+  #githubTxt {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+  }
+  #call {
+    position: absolute;
+    left: 20px;
+    top: 150px;
+  }
+  #callTxt {
+    position: absolute;
+    left: 20px;
+    top: 165px;
   }
 }

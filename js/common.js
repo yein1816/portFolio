@@ -120,3 +120,8 @@ window.addEventListener("scroll", function () {
     menuIcon.style.backgroundColor = "#d9d9d9"; // 기본 색상으로 돌아가기
   }
 });
+
+// 클릭 시 회전 효과를 트리거하는 스크립트
+document.querySelector("#contactWrap").addEventListener("click", function () {
+  this.classList.toggle("clicked"); // 클릭 시 class를 토글하여 회전
+});
