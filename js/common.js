@@ -58,7 +58,6 @@ function toggleMenu() {
 //   modalBackground.classList.remove("show");
 // });
 
-
 // 메뉴 li 클릭시 글자색 변경
 
 // menuItems.forEach((item) => {
@@ -103,29 +102,6 @@ links.forEach((link) => {
       });
     }
   });
-});
-
-
-// 해당 section 이동 시 menuIcon 색 변경
-// 스크롤 이벤트 핸들러
-window.addEventListener("scroll", function () {
-  const aboutMeSection = document.getElementById("aboutMe");
-  const projectSection = document.getElementById("project");
-
-  const scrollPosition = window.scrollY; // 현재 스크롤 위치
-  const aboutMeOffset = aboutMeSection.offsetTop; // About Me 섹션의 위치
-  const projectOffset = projectSection.offsetTop; // Project 섹션의 위치
-  
-  console.log(scrollPosition);
-  
-
-  if (scrollPosition >= aboutMeOffset && scrollPosition < projectOffset) {
-    menuIcon.style.backgroundColor = "#000c24"; // About Me 섹션에 있을 때 색상 변경
-  } else if (scrollPosition >= projectOffset) {
-    menuIcon.style.backgroundColor = "#000c24"; // Project 섹션에 있을 때 색상 변경
-  } else {
-    menuIcon.style.backgroundColor = "#d9d9d9"; // 기본 색상으로 돌아가기
-  }
 });
 
 // 클릭 시 회전 효과를 트리거하는 스크립트
