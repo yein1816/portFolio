@@ -259,6 +259,7 @@ a {
 #aboutMe h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
+  letter-spacing: -1px;
 }
 
 #aboutMe p {
@@ -821,6 +822,7 @@ body::-webkit-scrollbar-track {
 
   #aboutMe h1 {
     font-size: 1.5rem;
+    letter-spacing: -2px;
   }
 
   #aboutMe p {
