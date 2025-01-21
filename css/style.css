@@ -800,12 +800,14 @@ body::-webkit-scrollbar-track {
   }
   #titlePosition {
     top: 10rem;
-    left: -1rem;
+    left: 0;
+    right: 0;
   }
 
   #titlePosition2 {
-    left: -1rem;
     top: 14rem;
+    left: 0;
+    right: 0;
   }
   .frontTitle {
     left: 5.6rem;
