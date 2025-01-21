@@ -33,7 +33,7 @@ function animateCircle() {
 circle.style.position = "absolute";
 animateCircle();
 
-const menuIcon = document.querySelector(".menuWrapper .menuIcon");
+const menuIcon = document.querySelector(".menuIcon");
 const menu = document.querySelector(".menu");
 const modalBackground = document.querySelector("#modal .background");
 const menuItems = document.querySelectorAll(".menu ul li");
@@ -52,11 +52,12 @@ function toggleMenu() {
 }
 
 // 모달 배경 클릭 시 메뉴 닫기
-modalBackground.addEventListener("click", () => {
-  menu.classList.remove("open");
-  menuIcon.classList.remove("active");
-  modalBackground.classList.remove("show");
-});
+// modalBackground.addEventListener("click", () => {
+//   menu.classList.remove("open");
+//   menuIcon.classList.remove("active");
+//   modalBackground.classList.remove("show");
+// });
+
 
 // 메뉴 li 클릭시 글자색 변경
 
@@ -89,6 +90,9 @@ const links = document.querySelectorAll(".menu ul li a");
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
+    menu.classList.remove("open");
+    menuIcon.classList.remove("active");
+    modalBackground.classList.remove("show");
     const targetId = link.getAttribute("href");
     const targetSection = document.querySelector(targetId);
 
@@ -101,16 +105,19 @@ links.forEach((link) => {
   });
 });
 
+
 // 해당 section 이동 시 menuIcon 색 변경
 // 스크롤 이벤트 핸들러
 window.addEventListener("scroll", function () {
-  // const menuIcon = document.querySelector(".menuWrapper .menuIcon");
   const aboutMeSection = document.getElementById("aboutMe");
   const projectSection = document.getElementById("project");
 
   const scrollPosition = window.scrollY; // 현재 스크롤 위치
   const aboutMeOffset = aboutMeSection.offsetTop; // About Me 섹션의 위치
   const projectOffset = projectSection.offsetTop; // Project 섹션의 위치
+  
+  console.log(scrollPosition);
+  
 
   if (scrollPosition >= aboutMeOffset && scrollPosition < projectOffset) {
     menuIcon.style.backgroundColor = "#000c24"; // About Me 섹션에 있을 때 색상 변경
