@@ -387,6 +387,110 @@ h3 {
   border-radius: 10px;
 }
 
+/* EXPERIENCE 섹션 */
+#experience {
+  padding: 60px 20px;
+  background-color: #f5f7fa;
+}
+
+#experience .chaperTitle h3 {
+  color: #000c24;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.experienceWrap {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experienceWrap .job {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+  margin-top: 45px;
+}
+
+.experienceWrap .job h4 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: "Figtree","Noto Sans KR",sans-serif;
+}
+
+.experienceWrap .job .period {
+  font-size: 0.9rem;
+  color: #777;
+  margin-left: 0.5rem;
+}
+
+.experienceWrap .job p {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.8rem;
+  font-family: "Noto Sans KR",sans-serif;
+}
+
+.experienceWrap .job ul {
+  list-style: disc inside;
+  margin-left: 1rem;
+  color: #555;
+}
+
+.experienceWrap .job ul li {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.experienceWrap .job .job-footer {
+  margin-top: 1.5rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.experienceWrap .job .job-footer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 0.8rem;
+}
+
+.experienceWrap .job .job-footer p strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.github-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #f29006;
+  border: 2px solid #f29006;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+
+.github-btn:hover {
+  background-color: #f29006;
+  color: #fff;
+}
+
 #project {
   padding: 60px 20px;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
@@ -473,7 +577,6 @@ h3 {
   background-color: #f29006 !important;
   opacity: 1 !important;
 }
-
 
 #right {
   padding: 30px;
@@ -615,7 +718,7 @@ h3 {
   height: 100%;
   cursor: pointer;
   transform-style: preserve-3d;
-  transition: transform 0.8s; /* 클릭 시 회전 애니메이션 */
+  transition: transform 0.8s; 
 }
 /* 클릭 시 회전 */
 .flip-container:active .flipper,
@@ -681,12 +784,15 @@ h3 {
 #footer {
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: 0px;
   transform: translatex(-50%);
   font-size: 1.4rem;
   color: #d9d9d9;
   z-index: 201;
   text-align: center;
+  background-color: #000c24;
+  width: 100%;
+  margin-top: 10px;
 }
 
 #modal .background {
@@ -983,5 +1089,21 @@ body::-webkit-scrollbar-track {
     position: absolute;
     left: 20px;
     top: 165px;
+  }
+}
+/* 반응형 */
+@media (max-width: 768px) {
+  .experienceWrap {
+    gap: 1rem;
+  }
+  .experienceWrap .job {
+    padding: 15px 20px;
+  }
+  .experienceWrap .job h4 {
+    font-size: 1.2rem;
+  }
+  .experienceWrap .job p,
+  .experienceWrap .job ul li {
+    font-size: 0.95rem;
   }
 }
