@@ -524,7 +524,6 @@ h3 {
   overflow: hidden;
 }
 
-/* 슬라이드 전체 래퍼 */
 .swiper-container {
   position: relative;
   width: 100%;
@@ -533,19 +532,16 @@ h3 {
   border-radius: 10px;
 }
 
-/* 슬라이드 래퍼 */
 .swiper-wrapper {
   display: flex;
 }
 
-/* 각 슬라이드 */
 .swiper-slide {
   flex-shrink: 0;
   width: 100%;
   text-align: center;
 }
 
-/* 슬라이드 이미지 */
 .swiper-slide img {
   width: 100%;
   height: auto;
@@ -553,10 +549,10 @@ h3 {
   border-radius: 10px;
 }
 
-/* 페이지네이션 점 스타일 */
+
 .swiper-pagination {
   position: absolute;
-  bottom: 8px;  /* 이미지 하단 가까이 위치 */
+  bottom: 8px;
   left: 0;
   right: 0;
   text-align: center;
@@ -613,7 +609,6 @@ h3 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 10px;
-  /* font-family: "Noto Sans KR", sans-serif; */
   font-family: "Figtree", "Noto Sans KR", sans-serif;
 }
 
@@ -638,6 +633,7 @@ h3 {
   background-color: transparent;
   color: #f29006;
   transition: all 0.3s ease;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #right .btn:hover {
   background-color: #f29006;
